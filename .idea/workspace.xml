@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8bb7dfee-880f-40df-ba64-5f63face7ec5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aFnoevEbucnG57Lcl8t0r104Ka" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.blaydens.Main" />
+      <module name="EssenceMiner" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bb7dfee-880f-40df-ba64-5f63face7ec5" name="Default Changelist" comment="" />
+      <created>1586340386070</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586340386070</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="261" y="230" width="1154" height="683" key="#Project_Structure" timestamp="1586496435304">
+      <screen x="0" y="30" width="1680" height="1020" />
+    </state>
+    <state x="261" y="230" width="1154" height="683" key="#Project_Structure/0.30.1680.1020@0.30.1680.1020" timestamp="1586496435304" />
+    <state x="544" y="339" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586340553697">
+      <screen x="0" y="30" width="1680" height="1020" />
+    </state>
+    <state x="544" y="339" key="#com.intellij.ide.util.TreeClassChooserDialog/0.30.1680.1020@0.30.1680.1020" timestamp="1586340553697" />
+    <state x="594" y="310" key="FileChooserDialogImpl" timestamp="1586496449921">
+      <screen x="0" y="30" width="1680" height="1020" />
+    </state>
+    <state x="594" y="310" key="FileChooserDialogImpl/0.30.1680.1020@0.30.1680.1020" timestamp="1586496449921" />
+    <state x="65" y="104" width="916" height="854" key="SettingsEditor" timestamp="1586358175713">
+      <screen x="0" y="30" width="1680" height="1020" />
+    </state>
+    <state x="65" y="104" width="916" height="854" key="SettingsEditor/0.30.1680.1020@0.30.1680.1020" timestamp="1586358175713" />
+    <state x="541" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1586340418728">
+      <screen x="0" y="30" width="1680" height="1020" />
+    </state>
+    <state x="541" y="364" key="com.intellij.ide.util.TipDialog/0.30.1680.1020@0.30.1680.1020" timestamp="1586340418728" />
+    <state x="503" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1586358028107">
+      <screen x="0" y="30" width="1680" height="1020" />
+    </state>
+    <state x="503" y="250" width="672" height="678" key="search.everywhere.popup/0.30.1680.1020@0.30.1680.1020" timestamp="1586358028107" />
+  </component>
+</project>
