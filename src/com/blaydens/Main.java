@@ -18,6 +18,8 @@ import org.rspeer.script.Script;
 import org.rspeer.script.ScriptMeta;
 import org.rspeer.ui.Log;
 
+import com.blaydens.CLog;
+
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
@@ -40,15 +42,6 @@ public class Main extends Script {
             "Deposit"
     };
 
-    private static enum Level {
-        DEBUG,
-        INFO,
-        USER,
-        ERROR
-    }
-
-    private static final Level DEBUG_LEVEL = Level.INFO;
-
     private static final String ESSENCE_NODE_NAME = "Rune Essence";
     private static final Predicate<SceneObject> ESSENCE_NODE_PREDICATE = sceneObject -> sceneObject.getName().equals(ESSENCE_NODE_NAME);
 
@@ -68,7 +61,7 @@ public class Main extends Script {
 
     @Override
     public void onStart() {
-        cLog("Welcome to essence miner", Level.USER);
+        CLog.cLog("Welcome to essence miner", CLog.Level.USER);
     }
 
     @Override
@@ -82,24 +75,24 @@ public class Main extends Script {
 
     @Override
     public void onStop() {
-        cLog("Goodbye. Thanks for using essence miner", Level.USER);
+        CLog.cLog("Goodbye. Thanks for using essence miner", CLog.Level.USER);
     }
 
     private void setAction(){
         String newAction = "";
 
-        cLog("Choosing action to perform");
+        CLog.cLog("Choosing action to perform");
         newAction = chooseNextAction();
 
         if(!newAction.isEmpty()){
             int newActionIndex = getActionIndex(newAction);
-            cLog("Action chosen: " +newAction);
-            cLog("Action index: " + newActionIndex);
+            CLog.cLog("Action chosen: " +newAction);
+            CLog.cLog("Action index: " + newActionIndex);
             newAction = ACTIONS[newActionIndex];
 
             if(!newAction.equals(currentAction)){
-                cLog("Completed: " + currentAction, Level.INFO);
-                cLog("Starting: " + newAction, Level.INFO);
+                CLog.cLog("Completed: " + currentAction, CLog.Level.INFO);
+                CLog.cLog("Starting: " + newAction, CLog.Level.INFO);
                 currentAction = newAction;
                 performAction(newAction);
                 iterationsSinceLastAction = 0;
@@ -115,7 +108,7 @@ public class Main extends Script {
             }
 
         } else {
-            cLog("I'm kinda confused, what do I do now?", Level.INFO);
+            CLog.cLog("I'm kinda confused, what do I do now?", CLog.Level.INFO);
         }
 
     }
@@ -125,58 +118,58 @@ public class Main extends Script {
         SceneObject essenceNode = SceneObjects.getNearest(ESSENCE_NODE_PREDICATE);
 
         if(!Inventory.isFull()){
-            cLog("Inventory has space");
+            CLog.cLog("Inventory has space");
 
             Npc wizard = Npcs.getNearest(WIZARD_PREDICATE);
 
             //No Rune Essence nodes present
             if(essenceNode == null){
-                cLog("No Rune Essence nodes present");
+                CLog.cLog("No Rune Essence nodes present");
                 //No teleporting wizard present
                 if(wizard == null || !Movement.isInteractable(WIZARD_POSITION)){
-                    cLog("No teleporting wizard present or not reachable");
+                    CLog.cLog("No teleporting wizard present or not reachable");
                     //Walk to wizard
                     return "Walk to wizard";
 
                 //Teleporting wizard present
                 } else {
-                    cLog("Teleporting wizard present");
+                    CLog.cLog("Teleporting wizard present");
                     //Get wizard to teleport me
                     return "Teleport";
 
                 }
             //Rune Essence nodes present
             } else {
-                cLog("Rune Essence nodes present");
+                CLog.cLog("Rune Essence nodes present");
                 //Mine essence
                 return "Mine rune essence";
             }
         //Inventory is full
         } else {
-            cLog("Inventory is full");
+            CLog.cLog("Inventory is full");
 
             //No Rune Essence nodes present
             if(essenceNode == null){
-                cLog("No Rune Essence nodes present");
+                CLog.cLog("No Rune Essence nodes present");
                 SceneObject bank = SceneObjects.getNearest(BANK_PREDICATE);
 
                 //No Bank present or not reachable
                 if(bank == null || !Movement.isInteractable(BANK_POSITION)){
-                    cLog("No bank present or not reachable");
+                    CLog.cLog("No bank present or not reachable");
                     return "Walk to bank";
 
                 //Bank present
                 } else {
-                    cLog("Bank present");
+                    CLog.cLog("Bank present");
 
                     //In bank screen
                     if(Bank.isOpen()){
-                        cLog("In bank screen");
+                        CLog.cLog("In bank screen");
                         return "Deposit";
 
                     //Not in bank screen
                     } else {
-                        cLog("Not in bank screen");
+                        CLog.cLog("Not in bank screen");
                         return "Open bank";
                     }
 
@@ -184,7 +177,7 @@ public class Main extends Script {
 
             //Rune Essence nodes present
             } else {
-                cLog("Rune Essence nodes present");
+                CLog.cLog("Rune Essence nodes present");
                 return "Portal";
             }
         }
@@ -193,7 +186,7 @@ public class Main extends Script {
     }
 
     private void performAction(String action){
-        cLog("Performing action: " + action, Level.INFO);
+        CLog.cLog("Performing action: " + action, CLog.Level.INFO);
         /*
          "Walk to wizard",
          "Teleport",
@@ -227,7 +220,7 @@ public class Main extends Script {
                 action_deposit();
                 break;
             default:
-                cLog("Action: " + action + " has not been coded yet", Level.INFO);
+                CLog.cLog("Action: " + action + " has not been coded yet", CLog.Level.INFO);
         }
     }
 
@@ -286,19 +279,5 @@ public class Main extends Script {
         }
         return -1;
     }
-
-
-    /*
-    * Go near to closest TP wizard
-    * Interact with closest TP wizard once they are in sight (and maybe obstructions such as doors are clear?)
-    * Choose teleport from dialog
-    * Wait for teleport to complete
-    * Interact with rune essence pillar
-    * Wait until inventory full
-    * Interact with portal
-    * Go to bank
-    * Deposit rune essence
-    * -->
-    * */
 
 }

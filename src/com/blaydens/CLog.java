@@ -4,19 +4,28 @@ import org.rspeer.ui.Log;
 
 public class CLog {
 
-    private void cLog(String msg) {
-        cLog(msg, Main.Level.DEBUG);
+    public static enum Level {
+        DEBUG,
+        INFO,
+        USER,
+        ERROR
     }
 
-    private void cLog(String msg, int level) {
-        cLog(msg, Main.Level.values()[level]);
+    private static final Level DEBUG_LEVEL = Level.INFO;
+
+    public static void cLog(String msg) {
+        cLog(msg, Level.DEBUG);
     }
 
-    private void cLog(String msg, String level) {
-        cLog(msg, Main.Level.valueOf(level));
+    public static void cLog(String msg, int level) {
+        cLog(msg, Level.values()[level]);
     }
 
-    private void cLog(String msg, Main.Level level){
+    public static void cLog(String msg, String level) {
+        cLog(msg, Level.valueOf(level));
+    }
+
+    public static void cLog(String msg, Level level){
         if(DEBUG_LEVEL.compareTo(level) <= 0){
             switch (level) {
                 case USER:
