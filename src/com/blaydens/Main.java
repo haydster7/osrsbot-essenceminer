@@ -29,8 +29,10 @@ public class Main extends Script {
     private Player me;
     private String currentAction = "";
 
-    private static final int frameActionWait = 2;
-    private static int iterationsSinceLastAction = frameActionWait;
+    private static final int FRAME_ACTION_WAIT_MIN = 2;
+    private static final int FRAME_ACTION_WAIT_MAX = 5;
+    private static int frameActionWait = 0;
+    private static int iterationsSinceLastAction = 0;
 
     private static final String[] ACTIONS = {
             "Walk to wizard",
@@ -61,7 +63,7 @@ public class Main extends Script {
 
     @Override
     public void onStart() {
-        CLog.cLog("Welcome to essence miner", CLog.Level.USER);
+        CLog.log("Welcome to essence miner", CLog.Level.USER);
     }
 
     @Override
@@ -75,40 +77,43 @@ public class Main extends Script {
 
     @Override
     public void onStop() {
-        CLog.cLog("Goodbye. Thanks for using essence miner", CLog.Level.USER);
+        CLog.log("Goodbye. Thanks for using essence miner", CLog.Level.USER);
     }
 
     private void setAction(){
         String newAction = "";
 
-        CLog.cLog("Choosing action to perform");
+        CLog.log("Choosing action to perform");
         newAction = chooseNextAction();
 
         if(!newAction.isEmpty()){
             int newActionIndex = getActionIndex(newAction);
-            CLog.cLog("Action chosen: " +newAction);
-            CLog.cLog("Action index: " + newActionIndex);
+            CLog.log("Action chosen: " +newAction);
+            CLog.log("Action index: " + newActionIndex);
             newAction = ACTIONS[newActionIndex];
 
             if(!newAction.equals(currentAction)){
-                CLog.cLog("Completed: " + currentAction, CLog.Level.INFO);
-                CLog.cLog("Starting: " + newAction, CLog.Level.INFO);
+                CLog.log("Completed: " + currentAction, CLog.Level.INFO);
+                CLog.log("Starting: " + newAction, CLog.Level.INFO);
                 currentAction = newAction;
                 performAction(newAction);
-                iterationsSinceLastAction = 0;
-            }
-
-            if(!me.isAnimating() && !me.isMoving()) {
+            } else if ((!me.isAnimating() && !me.isMoving()) || newAction.contains("Walk")) {
+                CLog.log("Iterations since last action taken: " + iterationsSinceLastAction);
                 if(iterationsSinceLastAction >= frameActionWait){
                     performAction(newAction);
-                    iterationsSinceLastAction = 0;
+                } else {
+                    CLog.log("Would have performed action, but waiting "
+                            + (frameActionWait - iterationsSinceLastAction) + " more frames."
+                            + " frames since last action taken: " + iterationsSinceLastAction
+                            + " frames to wait minimum: " + frameActionWait
+                    );
                 }
             } else {
                 //currentAction = "";
             }
 
         } else {
-            CLog.cLog("I'm kinda confused, what do I do now?", CLog.Level.INFO);
+            CLog.log("I'm kinda confused, what do I do now?", CLog.Level.INFO);
         }
 
     }
@@ -118,58 +123,58 @@ public class Main extends Script {
         SceneObject essenceNode = SceneObjects.getNearest(ESSENCE_NODE_PREDICATE);
 
         if(!Inventory.isFull()){
-            CLog.cLog("Inventory has space");
+            CLog.log("Inventory has space");
 
             Npc wizard = Npcs.getNearest(WIZARD_PREDICATE);
 
             //No Rune Essence nodes present
             if(essenceNode == null){
-                CLog.cLog("No Rune Essence nodes present");
+                CLog.log("No Rune Essence nodes present");
                 //No teleporting wizard present
                 if(wizard == null || !Movement.isInteractable(WIZARD_POSITION)){
-                    CLog.cLog("No teleporting wizard present or not reachable");
+                    CLog.log("No teleporting wizard present or not reachable");
                     //Walk to wizard
                     return "Walk to wizard";
 
                 //Teleporting wizard present
                 } else {
-                    CLog.cLog("Teleporting wizard present");
+                    CLog.log("Teleporting wizard present");
                     //Get wizard to teleport me
                     return "Teleport";
 
                 }
             //Rune Essence nodes present
             } else {
-                CLog.cLog("Rune Essence nodes present");
+                CLog.log("Rune Essence nodes present");
                 //Mine essence
                 return "Mine rune essence";
             }
         //Inventory is full
         } else {
-            CLog.cLog("Inventory is full");
+            CLog.log("Inventory is full");
 
             //No Rune Essence nodes present
             if(essenceNode == null){
-                CLog.cLog("No Rune Essence nodes present");
+                CLog.log("No Rune Essence nodes present");
                 SceneObject bank = SceneObjects.getNearest(BANK_PREDICATE);
 
                 //No Bank present or not reachable
                 if(bank == null || !Movement.isInteractable(BANK_POSITION)){
-                    CLog.cLog("No bank present or not reachable");
+                    CLog.log("No bank present or not reachable");
                     return "Walk to bank";
 
                 //Bank present
                 } else {
-                    CLog.cLog("Bank present");
+                    CLog.log("Bank present");
 
                     //In bank screen
                     if(Bank.isOpen()){
-                        CLog.cLog("In bank screen");
+                        CLog.log("In bank screen");
                         return "Deposit";
 
                     //Not in bank screen
                     } else {
-                        CLog.cLog("Not in bank screen");
+                        CLog.log("Not in bank screen");
                         return "Open bank";
                     }
 
@@ -177,7 +182,7 @@ public class Main extends Script {
 
             //Rune Essence nodes present
             } else {
-                CLog.cLog("Rune Essence nodes present");
+                CLog.log("Rune Essence nodes present");
                 return "Portal";
             }
         }
@@ -186,7 +191,11 @@ public class Main extends Script {
     }
 
     private void performAction(String action){
-        CLog.cLog("Performing action: " + action, CLog.Level.INFO);
+        CLog.log("Performing action: " + action, CLog.Level.INFO);
+
+        iterationsSinceLastAction = 0;
+        frameActionWait = Random.nextInt(FRAME_ACTION_WAIT_MIN, FRAME_ACTION_WAIT_MAX);
+        CLog.log("Resetting frame wait vars. New frame wait = " + frameActionWait, CLog.Level.DEBUG);
         /*
          "Walk to wizard",
          "Teleport",
@@ -220,7 +229,7 @@ public class Main extends Script {
                 action_deposit();
                 break;
             default:
-                CLog.cLog("Action: " + action + " has not been coded yet", CLog.Level.INFO);
+                CLog.log("Action: " + action + " has not been coded yet", CLog.Level.INFO);
         }
     }
 

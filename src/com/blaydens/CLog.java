@@ -13,19 +13,19 @@ public class CLog {
 
     private static final Level DEBUG_LEVEL = Level.INFO;
 
-    public static void cLog(String msg) {
-        cLog(msg, Level.DEBUG);
+    public static void log(String msg) {
+        log(msg, Level.DEBUG);
     }
 
-    public static void cLog(String msg, int level) {
-        cLog(msg, Level.values()[level]);
+    public static void log(String msg, int level) {
+        log(msg, Level.values()[level]);
     }
 
-    public static void cLog(String msg, String level) {
-        cLog(msg, Level.valueOf(level));
+    public static void log(String msg, String level) {
+        log(msg, Level.valueOf(level));
     }
 
-    public static void cLog(String msg, Level level){
+    public static void log(String msg, Level level){
         if(DEBUG_LEVEL.compareTo(level) <= 0){
             switch (level) {
                 case USER:

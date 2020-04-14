@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Tutorial">
+    <output-path>//MSPAINT/appdata/rspeer/scripts</output-path>
+    <root id="archive" name="Tutorial.jar">
+      <element id="module-output" name="osrsbot-tutorial" />
+    </root>
+  </artifact>
+</component>

@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8bb7dfee-880f-40df-ba64-5f63face7ec5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Tutorial.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/EssenseMiner_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/EssenseMiner_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EssenceMiner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EssenceMiner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/blaydens/CLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blaydens/CLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/blaydens/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blaydens/Main.java" afterDir="false" />
     </list>
@@ -23,19 +47,28 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1aFnoevEbucnG57Lcl8t0r104Ka" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.rspeer/2.21.jar!/" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayden Moulds\Documents\workspace\osrsbot-tutorial\src" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -62,30 +95,67 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="261" y="230" width="1154" height="683" key="#Project_Structure" timestamp="1586496435304">
-      <screen x="0" y="30" width="1680" height="1020" />
+    <state x="239" y="27" width="1154" height="683" key="#Project_Structure" timestamp="1586513627730">
+      <screen x="0" y="27" width="1536" height="837" />
     </state>
+    <state x="239" y="27" key="#Project_Structure/0.27.1536.837@0.27.1536.837" timestamp="1586513627730" />
     <state x="261" y="230" width="1154" height="683" key="#Project_Structure/0.30.1680.1020@0.30.1680.1020" timestamp="1586496435304" />
-    <state x="544" y="339" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586340553697">
-      <screen x="0" y="30" width="1680" height="1020" />
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1586536029124">
+      <screen x="0" y="27" width="1536" height="837" />
     </state>
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.27.1536.837@0.27.1536.837" timestamp="1586536029124" />
+    <state x="497" y="281" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586513507639">
+      <screen x="0" y="27" width="1536" height="837" />
+    </state>
+    <state x="497" y="281" key="#com.intellij.ide.util.TreeClassChooserDialog/0.27.1536.837@0.27.1536.837" timestamp="1586513507639" />
     <state x="544" y="339" key="#com.intellij.ide.util.TreeClassChooserDialog/0.30.1680.1020@0.30.1680.1020" timestamp="1586340553697" />
-    <state x="594" y="310" key="FileChooserDialogImpl" timestamp="1586496449921">
-      <screen x="0" y="30" width="1680" height="1020" />
+    <state x="598" y="182" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1586511901838">
+      <screen x="0" y="27" width="1536" height="837" />
     </state>
+    <state x="598" y="182" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.27.1536.837@0.27.1536.837" timestamp="1586511901838" />
+    <state x="318" y="27" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586535787020">
+      <screen x="0" y="27" width="1536" height="837" />
+    </state>
+    <state x="318" y="27" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1536.837@0.27.1536.837" timestamp="1586535787020" />
+    <state x="543" y="257" key="FileChooserDialogImpl" timestamp="1586513458668">
+      <screen x="0" y="27" width="1536" height="837" />
+    </state>
+    <state x="543" y="257" key="FileChooserDialogImpl/0.27.1536.837@0.27.1536.837" timestamp="1586513458668" />
     <state x="594" y="310" key="FileChooserDialogImpl/0.30.1680.1020@0.30.1680.1020" timestamp="1586496449921" />
-    <state x="65" y="104" width="916" height="854" key="SettingsEditor" timestamp="1586358175713">
-      <screen x="0" y="30" width="1680" height="1020" />
+    <state x="439" y="149" width="670" height="592" key="NewModule_or_Project.wizard" timestamp="1586513266173">
+      <screen x="0" y="27" width="1536" height="837" />
     </state>
+    <state x="439" y="149" width="670" height="592" key="NewModule_or_Project.wizard/0.27.1536.837@0.27.1536.837" timestamp="1586513266173" />
+    <state x="59" y="27" width="916" height="854" key="SettingsEditor" timestamp="1586515360862">
+      <screen x="0" y="27" width="1536" height="837" />
+    </state>
+    <state x="59" y="27" key="SettingsEditor/0.27.1536.837@0.27.1536.837" timestamp="1586515360862" />
     <state x="65" y="104" width="916" height="854" key="SettingsEditor/0.30.1680.1020@0.30.1680.1020" timestamp="1586358175713" />
     <state x="541" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1586340418728">
       <screen x="0" y="30" width="1680" height="1020" />
     </state>
     <state x="541" y="364" key="com.intellij.ide.util.TipDialog/0.30.1680.1020@0.30.1680.1020" timestamp="1586340418728" />
-    <state x="503" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1586358028107">
-      <screen x="0" y="30" width="1680" height="1020" />
+    <state x="209" y="65" key="new project wizard" timestamp="1586513296250">
+      <screen x="0" y="27" width="1536" height="837" />
     </state>
+    <state x="209" y="65" key="new project wizard/0.27.1536.837@0.27.1536.837" timestamp="1586513296250" />
+    <state x="460" y="208" width="672" height="557" key="search.everywhere.popup" timestamp="1586540794696">
+      <screen x="0" y="27" width="1536" height="837" />
+    </state>
+    <state x="460" y="208" width="672" height="557" key="search.everywhere.popup/0.27.1536.837@0.27.1536.837" timestamp="1586540794696" />
     <state x="503" y="250" width="672" height="678" key="search.everywhere.popup/0.30.1680.1020@0.30.1680.1020" timestamp="1586358028107" />
   </component>
 </project>

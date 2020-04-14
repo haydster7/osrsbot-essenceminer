@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EssenceMiner.iml" filepath="$PROJECT_DIR$/EssenceMiner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../osrsbot-tutorial/osrsbot-tutorial.iml" filepath="$PROJECT_DIR$/../osrsbot-tutorial/osrsbot-tutorial.iml" />
     </modules>
   </component>
 </project>
